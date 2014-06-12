@@ -367,7 +367,9 @@ class Solr(object):
         # ``commit=true`` to the URL and have the commit happen without a
         # second request.
         query_vars = []
-
+        waitFlush=False
+        waitSearcher=False
+        commit=False
         if commit is not None:
             query_vars.append('commit=%s' % str(bool(commit)).lower())
 
